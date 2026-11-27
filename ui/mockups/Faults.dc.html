@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fault and alarm console</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4F6F8}
+a{color:#1F5FBF}a:hover{color:#174A96}
+</style>
+</helmet>
+<div style="font-family: Inter, system-ui, sans-serif; color: #14181F; background: #F4F6F8; min-height: 100vh">
+
+<header style="background: #14181F; color: #FFFFFF; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; padding: 14px 32px">
+<div style="display: flex; align-items: center; gap: 10px">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7FB2FF" stroke-width="2" aria-hidden="true"><path d="M3 17l5-6 4 4 8-10"/><path d="M3 21h18"/></svg>
+<span style="font-weight: 700; font-size: 16px">Niagara Analytics</span>
+</div>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px">
+<a href="Main.dc.html" style="color: #C9D1DC; text-decoration: none; padding: 10px 14px; border-radius: 6px; font-size: 14px">Overview</a>
+<a href="Trends.dc.html" style="color: #C9D1DC; text-decoration: none; padding: 10px 14px; border-radius: 6px; font-size: 14px">Trends</a>
+<a href="Faults.dc.html" style="color: #FFFFFF; background: #2A3240; text-decoration: none; padding: 10px 14px; border-radius: 6px; font-size: 14px; font-weight: 600">Faults and alarms</a>
+</nav>
+<div style="margin-left: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 13px">
+<span style="background: #3B2F12; color: #FFD58A; padding: 4px 10px; border-radius: 999px; font-weight: 600">Sample data</span>
+<span style="color: #C9D1DC">Kitchener · 61 Kitchener Ave</span>
+</div>
+</header>
+
+<main style="max-width: 1376px; margin: 0 auto; padding: 28px 32px 48px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px">
+<div>
+<h1 style="margin: 0; font-size: 26px; font-weight: 700">Faults and alarms</h1>
+<p style="margin: 6px 0 0; color: #5A6372; font-size: 14px">Analytics faults and Niagara alarms in one list. Acknowledging here acknowledges in the station's alarm console too.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" style="font: inherit; font-size: 14px; padding: 10px 14px; border-radius: 6px; border: 1px solid #D5DAE1; background: #FFFFFF; color: #14181F">Export report</button>
+<button type="button" style="font: inherit; font-size: 14px; padding: 10px 14px; border-radius: 6px; border: 1px solid #D5DAE1; background: #FFFFFF; color: #14181F">Routing settings</button>
+</div>
+</div>
+
+<div role="search" style="background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 14px 16px; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 4px; flex: 1 1 220px">
+<label for="q" style="font-size: 12px; font-weight: 600; color: #5A6372">Search</label>
+<input id="q" type="search" placeholder="Equipment or fault name" style="font: inherit; font-size: 14px; padding: 10px; border: 1px solid #D5DAE1; border-radius: 6px">
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<label for="sev" style="font-size: 12px; font-weight: 600; color: #5A6372">Severity</label>
+<select id="sev" style="font: inherit; font-size: 14px; padding: 10px; border: 1px solid #D5DAE1; border-radius: 6px; background: #FFFFFF"><option>All</option><option>High</option><option>Medium</option><option>Low</option></select>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<label for="st" style="font-size: 12px; font-weight: 600; color: #5A6372">Status</label>
+<select id="st" style="font: inherit; font-size: 14px; padding: 10px; border: 1px solid #D5DAE1; border-radius: 6px; background: #FFFFFF"><option>Active and unacknowledged</option><option>All active</option><option>Cleared, last 7 days</option></select>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<label for="eq" style="font-size: 12px; font-weight: 600; color: #5A6372">Equipment type</label>
+<select id="eq" style="font: inherit; font-size: 14px; padding: 10px; border: 1px solid #D5DAE1; border-radius: 6px; background: #FFFFFF"><option>All</option><option>Chiller plant</option><option>AHUs</option><option>VAVs</option><option>AC units</option><option>Exhaust fans</option></select>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<label for="src" style="font-size: 12px; font-weight: 600; color: #5A6372">Source</label>
+<select id="src" style="font: inherit; font-size: 14px; padding: 10px; border: 1px solid #D5DAE1; border-radius: 6px; background: #FFFFFF"><option>All</option><option>Analytics rule</option><option>Niagara alarm</option></select>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+
+<section aria-labelledby="list-h" style="flex: 999 1 640px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; overflow: hidden">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border-bottom: 1px solid #E2E5EA">
+<h2 id="list-h" style="margin: 0; font-size: 16px; font-weight: 600">14 active · 9 unacknowledged</h2>
+<button type="button" style="font: inherit; font-size: 13px; padding: 8px 12px; border-radius: 6px; border: 1px solid #D5DAE1; background: #FFFFFF; color: #14181F">Acknowledge selected</button>
+</div>
+<div style="overflow-x: auto">
+<table style="width: 100%; min-width: 760px; border-collapse: collapse; font-size: 14px">
+<thead>
+<tr style="text-align: left; color: #5A6372; font-size: 12px; background: #F8F9FB">
+<th scope="col" style="padding: 10px 16px; width: 28px"><span style="position: absolute; left: -9999px">Select</span></th>
+<th scope="col" style="padding: 10px 8px; font-weight: 600">Severity</th>
+<th scope="col" style="padding: 10px 8px; font-weight: 600">Equipment</th>
+<th scope="col" style="padding: 10px 8px; font-weight: 600">Fault</th>
+<th scope="col" style="padding: 10px 8px; font-weight: 600">Active for</th>
+<th scope="col" style="padding: 10px 8px; font-weight: 600">Source</th>
+<th scope="col" style="padding: 10px 16px 10px 8px; font-weight: 600">Status</th>
+</tr>
+</thead>
+<tbody>
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="9">
+<tr style="{{r.rowStyle}}">
+<td style="padding: 12px 16px"><input type="checkbox" aria-label="Select {{r.equip}} {{r.fault}}"></td>
+<td style="padding: 12px 8px"><span style="{{r.sevStyle}}">{{r.sev}}</span></td>
+<td style="padding: 12px 8px; font-weight: 600">{{r.equip}}</td>
+<td style="padding: 12px 8px">{{r.fault}}</td>
+<td style="padding: 12px 8px; color: #5A6372">{{r.age}}</td>
+<td style="padding: 12px 8px; color: #5A6372">{{r.src}}</td>
+<td style="padding: 12px 16px 12px 8px">{{r.status}}</td>
+</tr>
+</sc-for>
+</tbody>
+</table>
+</div>
+</section>
+
+<aside aria-labelledby="det-h" style="flex: 1 1 360px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div>
+<div style="display: flex; gap: 8px; align-items: center"><span style="font-size: 11px; font-weight: 700; color: #FFFFFF; background: #B42318; padding: 2px 7px; border-radius: 4px">HIGH</span><span style="font-size: 13px; color: #5A6372">Analytics rule</span></div>
+<h2 id="det-h" style="margin: 8px 0 0; font-size: 18px; font-weight: 700">AHU_3: heating and cooling at the same time</h2>
+<p style="margin: 6px 0 0; font-size: 14px; color: #5A6372">Active since 10:55 · 3 h 10 min · served by switchboard MSSB1</p>
+</div>
+<div style="background: #F8F9FB; border-radius: 8px; padding: 14px; font-size: 14px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-weight: 600">Why it fired</div>
+<div>Chilled water valve 42% while electric duct heater stage 1 is on</div>
+<div style="color: #5A6372; font-size: 13px">Rule: Chwv over 10% and any heat stage on for 15 min</div>
+</div>
+<div style="font-size: 14px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-weight: 600">Likely causes</div>
+<ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px">
+<li>Heating and cooling deadbands overlap</li>
+<li>Supply air sensor reading low, so heat is called</li>
+<li>Heater stage contactor stuck on</li>
+</ul>
+</div>
+<div style="font-size: 14px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-weight: 600">Sent to</div>
+<div style="color: #5A6372">Niagara alarm class High · email to service team · SMS to on-call</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="note" style="font-size: 14px; font-weight: 600">Add a note</label>
+<textarea id="note" rows="3" placeholder="What you checked or changed" style="font: inherit; font-size: 14px; padding: 10px; border: 1px solid #D5DAE1; border-radius: 6px; resize: vertical"></textarea>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" style="font: inherit; font-size: 14px; padding: 10px 14px; border-radius: 6px; border: 1px solid #1F5FBF; background: #1F5FBF; color: #FFFFFF; font-weight: 600">Acknowledge</button>
+<a href="Trends.dc.html" style="font-size: 14px; padding: 10px 14px; border-radius: 6px; border: 1px solid #D5DAE1; color: #14181F; text-decoration: none">Open trend</a>
+<button type="button" style="font: inherit; font-size: 14px; padding: 10px 14px; border-radius: 6px; border: 1px solid #D5DAE1; background: #FFFFFF; color: #14181F">Snooze 24 h</button>
+</div>
+</aside>
+</div>
+
+<section aria-labelledby="gap-h" style="background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 20px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: baseline">
+<h2 id="gap-h" style="margin: 0; font-size: 16px; font-weight: 600">16 rules are waiting for trend data</h2>
+<span style="font-size: 13px; color: #5A6372">484 points to trend in the station</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 14px; font-size: 14px">
+<div style="border: 1px dashed #98A2B3; border-radius: 8px; padding: 12px"><div style="font-weight: 600">VAV boxes · 5 rules</div><div style="color: #5A6372; font-size: 13px; margin-top: 4px">Airflow, airflow setpoint, damper, cooling demand and reheat on all 51 boxes</div></div>
+<div style="border: 1px dashed #98A2B3; border-radius: 8px; padding: 12px"><div style="font-weight: 600">AHUs · 6 rules</div><div style="color: #5A6372; font-size: 13px; margin-top: 4px">Heating demand, heat stages, fan command, outside air enthalpy</div></div>
+<div style="border: 1px dashed #98A2B3; border-radius: 8px; padding: 12px"><div style="font-weight: 600">AC units and exhaust fans · 4 rules</div><div style="color: #5A6372; font-size: 13px; margin-top: 4px">Fan command and schedule selection</div></div>
+<div style="border: 1px dashed #98A2B3; border-radius: 8px; padding: 12px"><div style="font-weight: 600">Chiller · 1 rule</div><div style="color: #5A6372; font-size: 13px; margin-top: 4px">Compressor current and lockout from the chiller interface</div></div>
+</div>
+</section>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1080}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var pill = 'font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;';
+    var sev = {
+      HIGH: pill + 'color:#FFFFFF;background:#B42318;',
+      MED: pill + 'color:#14181F;background:#FEC84B;',
+      LOW: pill + 'color:#344054;background:#E4E7EC;'
+    };
+    var rows = [
+      ['HIGH', 'AHU_3', 'Heating and cooling at the same time', '3 h 10 min', 'Analytics rule', 'Unacknowledged', true],
+      ['HIGH', 'CH_1', 'Compressor 2 short cycling', '55 min', 'Analytics rule', 'Unacknowledged', false],
+      ['HIGH', 'AC_6', 'Fan status fault (FnSts_Flt)', '20 min', 'Niagara alarm', 'Unacknowledged', false],
+      ['MED', 'AHU_9', 'Running outside scheduled hours', '1 h 40 min', 'Analytics rule', 'Unacknowledged', false],
+      ['MED', 'AHU_6', 'Chilled water valve saturated', '2 h 5 min', 'Analytics rule', 'Acknowledged by MD', false],
+      ['MED', 'AHU_11', 'Supply air temp not reaching setpoint', '45 min', 'Analytics rule', 'Unacknowledged', false],
+      ['MED', 'CH_1', 'Low chilled water delta-T', '4 h 30 min', 'Analytics rule', 'Acknowledged by Adrian', false],
+      ['LOW', 'CH_1', 'Bypass open with plant running', '6 h', 'Analytics rule', 'Unacknowledged', false],
+      ['LOW', 'AHU_4', 'Return air sensor fault (RATmp_Flt)', '1 day', 'Niagara alarm', 'Snoozed', false]
+    ];
+    return {
+      rows: rows.map(function (r) {
+        return { sev: r[0], sevStyle: sev[r[0]], equip: r[1], fault: r[2], age: r[3], src: r[4], status: r[5],
+          rowStyle: r[6] ? 'border-top:1px solid #EEF0F3;background:#EAF1FB;' : 'border-top:1px solid #EEF0F3;' };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

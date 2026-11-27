@@ -1,5 +1,8 @@
 # Plan
 
+The full, editable plan (architecture, rule library, UI, risks) lives in the shared doc:
+https://claude.ai/artifact/UBh8hRTYsPnE6cSQK2aDFe . This file is the short summary.
+
 Agreed with MD on 2026-11-27.
 
 ## Requirements

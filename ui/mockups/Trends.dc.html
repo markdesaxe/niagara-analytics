@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Trend explorer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4F6F8}
+a{color:#1F5FBF}a:hover{color:#174A96}
+</style>
+</helmet>
+<div style="font-family: Inter, system-ui, sans-serif; color: #14181F; background: #F4F6F8; min-height: 100vh">
+
+<header style="background: #14181F; color: #FFFFFF; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; padding: 14px 32px">
+<div style="display: flex; align-items: center; gap: 10px">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7FB2FF" stroke-width="2" aria-hidden="true"><path d="M3 17l5-6 4 4 8-10"/><path d="M3 21h18"/></svg>
+<span style="font-weight: 700; font-size: 16px">Niagara Analytics</span>
+</div>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px">
+<a href="Main.dc.html" style="color: #C9D1DC; text-decoration: none; padding: 10px 14px; border-radius: 6px; font-size: 14px">Overview</a>
+<a href="Trends.dc.html" style="color: #FFFFFF; background: #2A3240; text-decoration: none; padding: 10px 14px; border-radius: 6px; font-size: 14px; font-weight: 600">Trends</a>
+<a href="Faults.dc.html" style="color: #C9D1DC; text-decoration: none; padding: 10px 14px; border-radius: 6px; font-size: 14px">Faults and alarms</a>
+</nav>
+<div style="margin-left: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 13px">
+<span style="background: #3B2F12; color: #FFD58A; padding: 4px 10px; border-radius: 999px; font-weight: 600">Sample data</span>
+<span style="color: #C9D1DC">Kitchener · 61 Kitchener Ave</span>
+</div>
+</header>
+
+<main style="max-width: 1376px; margin: 0 auto; padding: 28px 32px 48px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px">
+<div>
+<h1 style="margin: 0; font-size: 26px; font-weight: 700">Trend explorer</h1>
+<p style="margin: 6px 0 0; color: #5A6372; font-size: 14px">Pick equipment and points by what they measure. Points are found by their Haystack tags.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" style="font: inherit; font-size: 14px; padding: 10px 14px; border-radius: 6px; border: 1px solid #D5DAE1; background: #FFFFFF; color: #14181F">Export CSV</button>
+<button type="button" style="font: inherit; font-size: 14px; padding: 10px 14px; border-radius: 6px; border: 1px solid #1F5FBF; background: #1F5FBF; color: #FFFFFF; font-weight: 600">Save view</button>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+
+<aside aria-label="Choose data" style="flex: 1 1 300px; max-width: 340px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="preset" style="font-size: 13px; font-weight: 600">Saved views</label>
+<select id="preset" style="font: inherit; font-size: 14px; padding: 10px; border: 1px solid #D5DAE1; border-radius: 6px; background: #FFFFFF">
+<option>AHU supply air vs setpoint</option>
+<option>Chilled water plant</option>
+<option>Zone temperatures by AHU</option>
+<option>Fans out of hours</option>
+</select>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="family" style="font-size: 13px; font-weight: 600">Equipment type</label>
+<select id="family" style="font: inherit; font-size: 14px; padding: 10px; border: 1px solid #D5DAE1; border-radius: 6px; background: #FFFFFF">
+<option>Air handling units (12)</option>
+<option>VAV boxes (51)</option>
+<option>Chiller plant (1)</option>
+<option>Packaged AC units (15)</option>
+<option>Exhaust fans (5)</option>
+</select>
+</div>
+<fieldset style="border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px">
+<legend style="font-size: 13px; font-weight: 600; margin-bottom: 8px">Equipment</legend>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px 8px; font-size: 14px">
+<label style="display: flex; gap: 6px; align-items: center; min-height: 32px"><input type="checkbox" checked> AHU_3</label>
+<label style="display: flex; gap: 6px; align-items: center; min-height: 32px"><input type="checkbox"> AHU_4</label>
+<label style="display: flex; gap: 6px; align-items: center; min-height: 32px"><input type="checkbox"> AHU_5</label>
+<label style="display: flex; gap: 6px; align-items: center; min-height: 32px"><input type="checkbox"> AHU_6</label>
+<label style="display: flex; gap: 6px; align-items: center; min-height: 32px"><input type="checkbox"> AHU_7</label>
+<label style="display: flex; gap: 6px; align-items: center; min-height: 32px"><input type="checkbox"> AHU_8</label>
+</div>
+<a href="#" style="font-size: 13px">Show all 12</a>
+</fieldset>
+<fieldset style="border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px">
+<legend style="font-size: 13px; font-weight: 600; margin-bottom: 8px">Points</legend>
+<label style="display: flex; gap: 8px; align-items: center; min-height: 34px; font-size: 14px"><input type="checkbox" checked><span style="width: 14px; height: 3px; background: #1F5FBF"></span>Supply air temp <span style="color: #5A6372; font-size: 12px">°C</span></label>
+<label style="display: flex; gap: 8px; align-items: center; min-height: 34px; font-size: 14px"><input type="checkbox" checked><span style="width: 14px; height: 0; border-top: 2px dashed #1F5FBF"></span>Supply air temp setpoint</label>
+<label style="display: flex; gap: 8px; align-items: center; min-height: 34px; font-size: 14px"><input type="checkbox" checked><span style="width: 14px; height: 3px; background: #E8590C"></span>Chilled water valve <span style="color: #5A6372; font-size: 12px">%</span></label>
+<label style="display: flex; gap: 8px; align-items: center; min-height: 34px; font-size: 14px"><input type="checkbox"> Return air temp</label>
+<label style="display: flex; gap: 8px; align-items: center; min-height: 34px; font-size: 14px"><input type="checkbox"> Economiser damper</label>
+<label style="display: flex; gap: 8px; align-items: center; min-height: 34px; font-size: 14px; color: #5A6372"><input type="checkbox" disabled> Heating demand <span style="font-size: 12px">(not trended)</span></label>
+</fieldset>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 600">Time range</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<button type="button" style="font: inherit; font-size: 13px; padding: 8px 12px; border-radius: 6px; border: 1px solid #D5DAE1; background: #FFFFFF; color: #14181F">Today</button>
+<button type="button" style="font: inherit; font-size: 13px; padding: 8px 12px; border-radius: 6px; border: 1px solid #1F5FBF; background: #EAF1FB; color: #174A96; font-weight: 600">24 h</button>
+<button type="button" style="font: inherit; font-size: 13px; padding: 8px 12px; border-radius: 6px; border: 1px solid #D5DAE1; background: #FFFFFF; color: #14181F">7 days</button>
+<button type="button" style="font: inherit; font-size: 13px; padding: 8px 12px; border-radius: 6px; border: 1px solid #D5DAE1; background: #FFFFFF; color: #14181F">30 days</button>
+<button type="button" style="font: inherit; font-size: 13px; padding: 8px 12px; border-radius: 6px; border: 1px solid #D5DAE1; background: #FFFFFF; color: #14181F">Custom</button>
+</div>
+</div>
+</aside>
+
+<section aria-labelledby="chart-h" style="flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div style="background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 20px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: baseline">
+<h2 id="chart-h" style="margin: 0; font-size: 17px; font-weight: 600">AHU_3 supply air temp missed setpoint for 3 h while the valve was open</h2>
+<span style="font-size: 13px; color: #5A6372">26 to 27 Nov · 5 min data</span>
+</div>
+<div style="overflow-x: auto; margin-top: 12px">
+<svg viewBox="0 0 900 340" style="width: 100%; min-width: 600px; height: auto; display: block" role="img" aria-label="Line chart of AHU_3 supply air temperature, its setpoint and chilled water valve over 24 hours">
+<rect x="{{band.x}}" y="20" width="{{band.w}}" height="270" fill="#B42318" fill-opacity="0.07"></rect>
+<text x="{{band.lx}}" y="36" font-size="12" fill="#B42318" font-weight="600">Fault: supply air temp off setpoint</text>
+<sc-for list="{{grid}}" as="g" hint-placeholder-count="5">
+<line x1="56" x2="844" y1="{{g.y}}" y2="{{g.y}}" stroke="#E9ECF0"></line>
+<text x="48" y="{{g.ty}}" font-size="12" fill="#5A6372" text-anchor="end">{{g.l}}</text>
+<text x="852" y="{{g.ty}}" font-size="12" fill="#5A6372">{{g.r}}</text>
+</sc-for>
+<sc-for list="{{xt}}" as="t" hint-placeholder-count="7">
+<text x="{{t.x}}" y="312" font-size="12" fill="#5A6372" text-anchor="middle">{{t.l}}</text>
+</sc-for>
+<text x="56" y="12" font-size="12" fill="#5A6372">°C</text>
+<text x="844" y="12" font-size="12" fill="#5A6372" text-anchor="end">Valve %</text>
+<path d="{{valve}}" fill="none" stroke="#E8590C" stroke-width="2"></path>
+<path d="{{sp}}" fill="none" stroke="#1F5FBF" stroke-width="2" stroke-dasharray="6 5"></path>
+<path d="{{sat}}" fill="none" stroke="#1F5FBF" stroke-width="2.5"></path>
+</svg>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; color: #5A6372; margin-top: 8px">
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 16px; height: 3px; background: #1F5FBF"></span>Supply air temp</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 16px; border-top: 2px dashed #1F5FBF"></span>Setpoint</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 16px; height: 3px; background: #E8590C"></span>Chilled water valve (right axis)</span>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 16px 18px"><div style="font-size: 13px; color: #5A6372">Time off setpoint (± 2 °C)</div><div style="font-size: 24px; font-weight: 700; margin-top: 4px">3 h 10 min</div></div>
+<div style="background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 16px 18px"><div style="font-size: 13px; color: #5A6372">Average supply air temp</div><div style="font-size: 24px; font-weight: 700; margin-top: 4px">14.1 °C</div></div>
+<div style="background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 16px 18px"><div style="font-size: 13px; color: #5A6372">Valve above 90%</div><div style="font-size: 24px; font-weight: 700; margin-top: 4px">1 h 25 min</div></div>
+<div style="background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 16px 18px"><div style="font-size: 13px; color: #5A6372">Faults in range</div><div style="font-size: 24px; font-weight: 700; margin-top: 4px"><a href="Faults.dc.html">1</a></div></div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1080}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var x0 = 56, x1 = 844, y0 = 20, y1 = 290, n = 96;
+    var X = function (i) { return x0 + (x1 - x0) * i / (n - 1); };
+    var T = function (c) { return y1 - (c - 8) / (24 - 8) * (y1 - y0); };
+    var V = function (p) { return y1 - p / 100 * (y1 - y0); };
+    var sat = [], sp = [], valve = [];
+    for (var i = 0; i < n; i++) {
+      var h = i / 4;
+      var occ = h >= 6 && h <= 18;
+      var fault = i >= 44 && i <= 56;
+      var s = occ ? 13 + Math.sin(i / 3) * 0.4 : 19 + Math.sin(i / 5) * 0.6;
+      if (fault) s = 16.2 + Math.sin(i / 2) * 0.5;
+      var v = occ ? 45 + Math.sin(i / 4) * 12 : 0;
+      if (fault) v = 70 + Math.sin(i / 3) * 8;
+      sat.push((i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + T(s).toFixed(1));
+      sp.push((i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + T(occ ? 13 : 18).toFixed(1));
+      valve.push((i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + V(v).toFixed(1));
+    }
+    var grid = [8, 12, 16, 20, 24].map(function (c) { var y = T(c); return { y: y, ty: y + 4, l: String(c), r: String(Math.round((c - 8) / 16 * 100)) }; });
+    var xt = ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00', '24:00'].map(function (l, k) { return { x: x0 + (x1 - x0) * k / 6, l: l }; });
+    return { sat: sat.join(' '), sp: sp.join(' '), valve: valve.join(' '), grid: grid, xt: xt,
+      band: { x: X(44), w: X(56) - X(44), lx: X(44) + 8 } };
+  }
+}
+</script>
+</body>
+</html>
