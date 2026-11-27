@@ -1,0 +1,492 @@
+{
+ "points": 3139,
+ "trended": 337,
+ "alarmed": 85,
+ "by_station": {
+  "(local)": 12,
+  "JACE900101": 1754,
+  "JACE900102": 1373
+ },
+ "equipment": {
+  "(local)|Adrians_Sandbox": {
+   "points": 2,
+   "trended": 0,
+   "alarmed": 0
+  },
+  "(local)|AlarmService": {
+   "points": 1,
+   "trended": 0,
+   "alarmed": 1
+  },
+  "(local)|Schedule": {
+   "points": 1,
+   "trended": 0,
+   "alarmed": 0
+  },
+  "(local)|Vaverages": {
+   "points": 8,
+   "trended": 0,
+   "alarmed": 0
+  },
+  "JACE900101|AC_1": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900101|AC_10": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900101|AC_11": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900101|AC_2": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900101|AC_3": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900101|AC_4": {
+   "points": 5,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900101|AC_5_1": {
+   "points": 1,
+   "trended": 0,
+   "alarmed": 0
+  },
+  "JACE900101|AC_5_2": {
+   "points": 1,
+   "trended": 1,
+   "alarmed": 0
+  },
+  "JACE900101|AC_6": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900101|AC_7": {
+   "points": 10,
+   "trended": 7,
+   "alarmed": 0
+  },
+  "JACE900101|AC_8_9": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900101|AHU_12": {
+   "points": 75,
+   "trended": 11,
+   "alarmed": 5
+  },
+  "JACE900101|AHU_3": {
+   "points": 91,
+   "trended": 17,
+   "alarmed": 5
+  },
+  "JACE900101|AHU_4": {
+   "points": 91,
+   "trended": 17,
+   "alarmed": 5
+  },
+  "JACE900101|AHU_5": {
+   "points": 93,
+   "trended": 17,
+   "alarmed": 5
+  },
+  "JACE900101|AHU_6": {
+   "points": 85,
+   "trended": 13,
+   "alarmed": 5
+  },
+  "JACE900101|AHU_7": {
+   "points": 85,
+   "trended": 13,
+   "alarmed": 5
+  },
+  "JACE900101|AHU_8": {
+   "points": 93,
+   "trended": 17,
+   "alarmed": 5
+  },
+  "JACE900101|B1": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 0
+  },
+  "JACE900101|CHWP_LeadLag": {
+   "points": 3,
+   "trended": 0,
+   "alarmed": 0
+  },
+  "JACE900101|CH_1": {
+   "points": 30,
+   "trended": 17,
+   "alarmed": 4
+  },
+  "JACE900101|CH_1_HLI": {
+   "points": 47,
+   "trended": 3,
+   "alarmed": 2
+  },
+  "JACE900101|CH_LeadLag": {
+   "points": 3,
+   "trended": 0,
+   "alarmed": 0
+  },
+  "JACE900101|EF_1": {
+   "points": 3,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900101|EF_12": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900101|EF_13": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900101|EF_14": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900101|Stage_0": {
+   "points": 7,
+   "trended": 0,
+   "alarmed": 1
+  },
+  "JACE900101|Stage_1": {
+   "points": 14,
+   "trended": 0,
+   "alarmed": 0
+  },
+  "JACE900101|Stage_2": {
+   "points": 11,
+   "trended": 0,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_3_1": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_3_2": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_3_3": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_3_4": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_3_5": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_3_6": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_3_7": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_3_8": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_3_9": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_4_1": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_4_2": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_4_3": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_4_4": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_4_5": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_4_6": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_4_7": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_5_1": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_5_2": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_5_3": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_5_4": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_8_1": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_8_2": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_8_3": {
+   "points": 37,
+   "trended": 0,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_8_4": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_8_5": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900101|VAV_8_6": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|AC_12": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900102|AC_13": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900102|AC_14": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900102|AC_15": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900102|AHU_1": {
+   "points": 88,
+   "trended": 20,
+   "alarmed": 6
+  },
+  "JACE900102|AHU_10": {
+   "points": 93,
+   "trended": 17,
+   "alarmed": 4
+  },
+  "JACE900102|AHU_11": {
+   "points": 93,
+   "trended": 17,
+   "alarmed": 5
+  },
+  "JACE900102|AHU_2": {
+   "points": 86,
+   "trended": 17,
+   "alarmed": 5
+  },
+  "JACE900102|AHU_9": {
+   "points": 87,
+   "trended": 13,
+   "alarmed": 4
+  },
+  "JACE900102|B1": {
+   "points": 4,
+   "trended": 0,
+   "alarmed": 0
+  },
+  "JACE900102|EF_16": {
+   "points": 4,
+   "trended": 1,
+   "alarmed": 1
+  },
+  "JACE900102|VAV_10_1": {
+   "points": 34,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_10_2": {
+   "points": 34,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_10_3": {
+   "points": 34,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_10_4": {
+   "points": 34,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_10_5": {
+   "points": 34,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_10_6": {
+   "points": 34,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_10_7": {
+   "points": 34,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_10_8": {
+   "points": 34,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_11_1": {
+   "points": 34,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_11_2": {
+   "points": 34,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_11_3": {
+   "points": 34,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_11_4": {
+   "points": 34,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_11_5": {
+   "points": 34,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_1_1": {
+   "points": 37,
+   "trended": 3,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_1_2": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_1_3": {
+   "points": 38,
+   "trended": 2,
+   "alarmed": 1
+  },
+  "JACE900102|VAV_1_4": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_1_5": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_1_6": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_1_7": {
+   "points": 37,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_2_1": {
+   "points": 40,
+   "trended": 3,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_2_2": {
+   "points": 40,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_2_3": {
+   "points": 40,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_2_4": {
+   "points": 40,
+   "trended": 2,
+   "alarmed": 0
+  },
+  "JACE900102|VAV_2_5": {
+   "points": 40,
+   "trended": 2,
+   "alarmed": 0
+  }
+ }
+}

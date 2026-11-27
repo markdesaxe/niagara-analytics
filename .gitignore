@@ -1,0 +1,9 @@
+# Station backups and raw configs hold credentials and password hashes: never commit them
+*.dist
+*.bog
+*.bog.xml
+sites/*/raw/
+__pycache__/
+*.pyc
+build/
+.gradle/
