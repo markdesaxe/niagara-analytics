@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Site overview</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4F6F8}
+a{color:#1F5FBF}a:hover{color:#174A96}
+</style>
+</helmet>
+<div style="font-family: Inter, system-ui, sans-serif; color: #14181F; background: #F4F6F8; min-height: 100vh">
+
+<header style="background: #14181F; color: #FFFFFF; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; padding: 14px 32px">
+<div style="display: flex; align-items: center; gap: 10px">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7FB2FF" stroke-width="2" aria-hidden="true"><path d="M3 17l5-6 4 4 8-10"/><path d="M3 21h18"/></svg>
+<span style="font-weight: 700; font-size: 16px">Niagara Analytics</span>
+</div>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px">
+<a href="Main.dc.html" style="color: #FFFFFF; background: #2A3240; text-decoration: none; padding: 10px 14px; border-radius: 6px; font-size: 14px; font-weight: 600">Overview</a>
+<a href="Trends.dc.html" style="color: #C9D1DC; text-decoration: none; padding: 10px 14px; border-radius: 6px; font-size: 14px">Trends</a>
+<a href="Faults.dc.html" style="color: #C9D1DC; text-decoration: none; padding: 10px 14px; border-radius: 6px; font-size: 14px">Faults and alarms</a>
+</nav>
+<div style="margin-left: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 13px">
+<span style="background: #3B2F12; color: #FFD58A; padding: 4px 10px; border-radius: 999px; font-weight: 600">Sample data</span>
+<span style="color: #C9D1DC">Kitchener · 61 Kitchener Ave</span>
+</div>
+</header>
+
+<main style="max-width: 1376px; margin: 0 auto; padding: 28px 32px 48px; display: flex; flex-direction: column; gap: 24px">
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px">
+<div>
+<h1 style="margin: 0; font-size: 26px; font-weight: 700">Site overview</h1>
+<p style="margin: 6px 0 0; color: #5A6372; font-size: 14px">93 pieces of equipment on 2 JACEs · updated 14:05 AWST</p>
+</div>
+<div style="display: flex; gap: 8px">
+<button type="button" style="font: inherit; font-size: 14px; padding: 10px 14px; border-radius: 6px; border: 1px solid #D5DAE1; background: #FFFFFF; color: #14181F">Last 24 hours</button>
+<button type="button" style="font: inherit; font-size: 14px; padding: 10px 14px; border-radius: 6px; border: 1px solid #1F5FBF; background: #1F5FBF; color: #FFFFFF; font-weight: 600">Open fault console</button>
+</div>
+</div>
+
+<section aria-label="Key figures" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 18px 20px">
+<div style="font-size: 13px; color: #5A6372; font-weight: 500">Active faults</div>
+<div style="font-size: 34px; font-weight: 700; margin-top: 6px">14</div>
+<div style="display: flex; gap: 12px; font-size: 13px; margin-top: 6px"><span style="color: #B42318; font-weight: 600">3 high</span><span style="color: #B54708; font-weight: 600">7 medium</span><span style="color: #5A6372">4 low</span></div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 18px 20px">
+<div style="font-size: 13px; color: #5A6372; font-weight: 500">Equipment with no faults</div>
+<div style="font-size: 34px; font-weight: 700; margin-top: 6px">82 <span style="font-size: 16px; color: #5A6372; font-weight: 500">of 93</span></div>
+<div style="height: 6px; background: #E9ECF0; border-radius: 3px; margin-top: 12px"><div style="width: 88%; height: 6px; background: #067647; border-radius: 3px"></div></div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 18px 20px">
+<div style="font-size: 13px; color: #5A6372; font-weight: 500">Fault rules running</div>
+<div style="font-size: 34px; font-weight: 700; margin-top: 6px">11 <span style="font-size: 16px; color: #5A6372; font-weight: 500">of 27</span></div>
+<div style="font-size: 13px; margin-top: 6px; color: #5A6372">16 wait for trends · <a href="Faults.dc.html">see data gaps</a></div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 18px 20px">
+<div style="font-size: 13px; color: #5A6372; font-weight: 500">Chilled water plant</div>
+<div style="font-size: 22px; font-weight: 700; margin-top: 10px">Stage 1 · CH_1 running</div>
+<div style="font-size: 13px; margin-top: 8px; color: #5A6372">LCHWT 6.8 °C (SP 6.5) · OAT 31.2 °C</div>
+</div>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+
+<section aria-labelledby="eq-h" style="flex: 999 1 640px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 20px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px">
+<h2 id="eq-h" style="margin: 0; font-size: 17px; font-weight: 600">Equipment health</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: #5A6372">
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 2px; background: #067647"></span>No faults</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 2px; background: #F79009"></span>Medium or low</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 2px; background: #B42318"></span>High</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 2px; background: #FFFFFF; border: 1px dashed #98A2B3"></span>No rules yet</span>
+</div>
+</div>
+
+<sc-for list="{{groups}}" as="g" hint-placeholder-count="5">
+<div style="margin-top: 18px">
+<div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 8px"><span style="font-weight: 600">{{g.name}}</span><span style="color: #5A6372">{{g.note}}</span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 6px">
+<sc-for list="{{g.units}}" as="u" hint-placeholder-count="12">
+<a href="Trends.dc.html" style="{{u.style}}">{{u.name}}</a>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</section>
+
+<aside style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<section aria-labelledby="top-h" style="background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 20px">
+<h2 id="top-h" style="margin: 0 0 12px; font-size: 17px; font-weight: 600">Top faults by impact</h2>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+<li style="padding: 12px 0; border-top: 1px solid #EEF0F3"><div style="display: flex; gap: 8px; align-items: center"><span style="font-size: 11px; font-weight: 700; color: #FFFFFF; background: #B42318; padding: 2px 7px; border-radius: 4px">HIGH</span><span style="font-weight: 600; font-size: 14px">AHU_3 heating and cooling together</span></div><div style="font-size: 13px; color: #5A6372; margin-top: 4px">Chwv 42% with EDH stage 1 on · 3 h 10 min</div></li>
+<li style="padding: 12px 0; border-top: 1px solid #EEF0F3"><div style="display: flex; gap: 8px; align-items: center"><span style="font-size: 11px; font-weight: 700; color: #FFFFFF; background: #B42318; padding: 2px 7px; border-radius: 4px">HIGH</span><span style="font-weight: 600; font-size: 14px">CH_1 compressor short cycling</span></div><div style="font-size: 13px; color: #5A6372; margin-top: 4px">COMP2 started 6 times in the last hour</div></li>
+<li style="padding: 12px 0; border-top: 1px solid #EEF0F3"><div style="display: flex; gap: 8px; align-items: center"><span style="font-size: 11px; font-weight: 700; color: #14181F; background: #FEC84B; padding: 2px 7px; border-radius: 4px">MED</span><span style="font-weight: 600; font-size: 14px">AHU_9 running out of hours</span></div><div style="font-size: 13px; color: #5A6372; margin-top: 4px">Fan on since 19:40 with schedule off</div></li>
+<li style="padding: 12px 0; border-top: 1px solid #EEF0F3"><div style="display: flex; gap: 8px; align-items: center"><span style="font-size: 11px; font-weight: 700; color: #14181F; background: #FEC84B; padding: 2px 7px; border-radius: 4px">MED</span><span style="font-weight: 600; font-size: 14px">AHU_6 chilled water valve saturated</span></div><div style="font-size: 13px; color: #5A6372; margin-top: 4px">Chwv 100%, SAT 15.9 °C vs SP 13.0 °C</div></li>
+</ol>
+<a href="Faults.dc.html" style="display: inline-block; margin-top: 8px; font-size: 14px; font-weight: 600">All 14 faults</a>
+</section>
+
+<section aria-labelledby="data-h" style="background: #FFFFFF; border: 1px solid #E2E5EA; border-radius: 10px; padding: 20px">
+<h2 id="data-h" style="margin: 0 0 4px; font-size: 17px; font-weight: 600">Data readiness</h2>
+<p style="margin: 0 0 14px; font-size: 13px; color: #5A6372">Points the fault rules need that the station trends</p>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 13px">
+<div><div style="display: flex; justify-content: space-between"><span>Chiller plant</span><span style="color: #5A6372">7 of 8 rules</span></div><div style="height: 6px; background: #E9ECF0; border-radius: 3px; margin-top: 6px"><div style="width: 88%; height: 6px; background: #1F5FBF; border-radius: 3px"></div></div></div>
+<div><div style="display: flex; justify-content: space-between"><span>AHUs</span><span style="color: #5A6372">3 of 9 rules</span></div><div style="height: 6px; background: #E9ECF0; border-radius: 3px; margin-top: 6px"><div style="width: 33%; height: 6px; background: #1F5FBF; border-radius: 3px"></div></div></div>
+<div><div style="display: flex; justify-content: space-between"><span>AC units</span><span style="color: #5A6372">1 of 3 rules</span></div><div style="height: 6px; background: #E9ECF0; border-radius: 3px; margin-top: 6px"><div style="width: 33%; height: 6px; background: #1F5FBF; border-radius: 3px"></div></div></div>
+<div><div style="display: flex; justify-content: space-between"><span>VAVs</span><span style="color: #5A6372">0 of 5 rules</span></div><div style="height: 6px; background: #E9ECF0; border-radius: 3px; margin-top: 6px"><div style="width: 0%; height: 6px; background: #1F5FBF; border-radius: 3px"></div></div></div>
+<div><div style="display: flex; justify-content: space-between"><span>Exhaust fans</span><span style="color: #5A6372">0 of 2 rules</span></div><div style="height: 6px; background: #E9ECF0; border-radius: 3px; margin-top: 6px"><div style="width: 0%; height: 6px; background: #1F5FBF; border-radius: 3px"></div></div></div>
+</div>
+</section>
+</aside>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1080}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var base = 'display:block;text-align:center;text-decoration:none;font-size:12px;font-weight:600;padding:10px 4px;border-radius:6px;';
+    var st = {
+      ok: base + 'background:#E7F5EE;color:#05603A;border:1px solid #A6DCC0;',
+      med: base + 'background:#FEF0DB;color:#93370D;border:1px solid #F8C77C;',
+      high: base + 'background:#B42318;color:#FFFFFF;border:1px solid #B42318;',
+      none: base + 'background:#FFFFFF;color:#5A6372;border:1px dashed #98A2B3;'
+    };
+    function units(names, faults, dflt) {
+      return names.map(function (n) { return { name: n, style: st[faults[n] || dflt] }; });
+    }
+    var ahu = []; for (var i = 1; i <= 12; i++) ahu.push('AHU_' + i);
+    var ac = []; for (var j = 1; j <= 15; j++) ac.push('AC_' + j);
+    var vav = ['VAV_1_1','VAV_1_2','VAV_1_3','VAV_1_4','VAV_1_5','VAV_1_6','VAV_1_7','VAV_2_1','VAV_2_2','VAV_2_3','VAV_2_4','VAV_2_5','VAV_3_1','VAV_3_2','VAV_3_3','VAV_3_4','VAV_3_5','VAV_3_6','VAV_3_7','VAV_3_8','VAV_3_9','VAV_4_1','VAV_4_2','VAV_4_3'];
+    return {
+      groups: [
+        { name: 'Chilled water plant', note: '1 chiller, 2 pumps', units: units(['CH_1', 'CHWP_1', 'CHWP_2'], { CH_1: 'high' }, 'ok') },
+        { name: 'Air handling units', note: '12 units', units: units(ahu, { AHU_3: 'high', AHU_6: 'med', AHU_9: 'med', AHU_11: 'med' }, 'ok') },
+        { name: 'Packaged AC units', note: '15 units', units: units(ac, { AC_6: 'med' }, 'ok') },
+        { name: 'VAV boxes', note: '51 boxes, first 24 shown · rules start once airflow and damper trends are added', units: units(vav, {}, 'none') },
+        { name: 'Exhaust fans', note: '5 fans', units: units(['EF_1', 'EF_12', 'EF_13', 'EF_14', 'EF_16'], {}, 'none') }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
